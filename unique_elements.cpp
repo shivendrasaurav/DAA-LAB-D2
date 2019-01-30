@@ -6,18 +6,24 @@
 
 int main(){
 	float start_t=clock();
-	int max=999,i,j;
+	int max=999,i,j,temp;
 	int a[max],u=0,un;
 	srand(time(0));
 	for(i=0;i<max;i++){
 		a[i]=rand();
 	}
-	for(i=0;i<max-1;i++){
-		un=a[i];
-		for(j=i+1;j<max;j++){
-			if(a[j]==un){
-			    printf("\n%d Is Getting Repeated",un);
+	for(i=0;i<max;i++){
+		for(j=0;j<max;j++){
+			if(a[j]>a[j+1]){
+				temp=a[j];
+				a[j]=a[j+1];
+				a[j+1]=temp;
 			}
+		}
+	}
+	for(i=0;i<max;i++){
+		if(a[i]==a[i+1]){
+			printf("\n%d is getting repeated",a[i]);
 		}
 	}
 	Sleep(100);
