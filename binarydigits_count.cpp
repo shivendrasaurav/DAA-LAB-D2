@@ -6,15 +6,19 @@
 
 int main(){
 	float start_t=clock();
-	int n,i=0;
+	int n,i=1,bin[20]={0},j;
 	srand(time(0));
-	n=rand();
-	printf("%d",n);
-	while(n>1){
+	n=30406;
+	printf("Randomly Generated Number Is : %d\nBinary Replresntation Of n Is :",n);
+	while(n>0){
+		bin[i]=n%2;
 		n=n/2;
 		i++;
 	}
-	printf("\nNo Of Digits In Binary Representation Of n Is : %d",i+1);
+	for(j=19;j>0;j--){
+		printf("%d",bin[j]);
+	}
+	printf("\nNo Of Digits In Binary Representation Of n Is : %d",i);
 	Sleep(100);
 	float end_t=clock();
 	float total_t = (double)(end_t - start_t) / CLOCKS_PER_SEC;
