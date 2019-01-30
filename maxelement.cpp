@@ -19,4 +19,8 @@ int main(){
 		    m=a[i];
 	}
 	printf("Largest of all randomly generated numbers is : %d",m);
+	Sleep(100);
+	float end_t=clock();
+	float total_t = (double)(end_t - start_t) / CLOCKS_PER_SEC;
+	printf("\n\nTime Taken To Generate Random Numbers : %f",total_t);
 }
